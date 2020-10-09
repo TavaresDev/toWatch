@@ -1,3 +1,4 @@
+import { AppBar, Button, List, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
 import {
     BrowserRouter as Router,
@@ -5,39 +6,39 @@ import {
     Route,
     Switch
 } from 'react-router-dom'
+import Home from '../Home/Home'
+import ListPg from '../List/ListPG'
 
 const Nav = () => {
     return (
         <Router>
-        <Styles.Nav>
-            <ul>
-                <li>
-                    <Link to="/">
-                        Home
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/page2">
-                        page2
-                    </Link>
-                </li>
-            </ul>
-        </Styles.Nav>
-        
+            <AppBar position="static">
+                <Toolbar>
+                    <nav>
+                        <Link to="/"> Home </Link>
+                        <Link to="/about"> About </Link>
+                        <Link to="/list"> List </Link>
+                        {/* <Button color="inherit">Login</Button> */}
+                    </nav>
 
-        <Switch>
-            <Route exact path="/" >
-                {/* <Home/> */}
-                <h1>Home</h1>
-            </Route>
-            <Route exact path="/page2">
-                {/* <TicTacToe/> */}
-                <h1>Page2</h1>
-            </Route>
-        </Switch>
+                </Toolbar>
+            </AppBar>
 
-    </Router>
+
+
+            <Switch>
+                <Route exact path="/" >
+                    <Home/>
+                </Route>
+                <Route exact path="/about">
+                    <h1>About</h1>
+                </Route>
+                <Route exact path="/list">
+                    <ListPg/>  
  
+                </Route>
+            </Switch>
+        </Router>
     )
 }
 
