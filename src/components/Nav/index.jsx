@@ -6,8 +6,9 @@ import {
     Route,
     Switch
 } from 'react-router-dom'
-import Home from '../Home/Home'
-import ListPg from '../List/ListPG'
+import Content from '../Content/Content'
+
+
 
 const Nav = () => {
     return (
@@ -17,10 +18,7 @@ const Nav = () => {
                     <nav>
                         <Link to="/"> Home </Link>
                         <Link to="/about"> About </Link>
-                        <Link to="/list"> List </Link>
-                        {/* <Button color="inherit">Login</Button> */}
                     </nav>
-
                 </Toolbar>
             </AppBar>
 
@@ -28,14 +26,12 @@ const Nav = () => {
 
             <Switch>
                 <Route exact path="/" >
-                    <Home/>
+                    <Content/>
                 </Route>
                 <Route exact path="/about">
                     <h1>About</h1>
-                </Route>
-                <Route exact path="/list">
-                    <ListPg/>  
- 
+                    <Content/>
+        
                 </Route>
             </Switch>
         </Router>
